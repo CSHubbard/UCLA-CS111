@@ -1,0 +1,15 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+S/N BBGW16062701
+MAC ADDR: HWaddr b0:d5:cc:fa:64:d4
+
+FILES INCLUDED (6):
+(1) - README 
+(2)a selfie (my_beaglebone.jpg) of you holding your assembled Beaglebone (showing the chip).
+(3)a screen shot (connected.png) from a USB terminal command session connected to your system,
+	showing that you gave it a name and configured network access.
+(4)a screen shot (copy.png) from a local session in which you copy a hello world program from your laptop/desktop to your Beaglebone.
+(5)a screen shot (build_run.png) from a WIFI SSH session in which you build and run a trivial (hello world) program.
+(6)a screen shot (git.png) from a WIFI SSH session in which you install git and clone a repository.

@@ -1,0 +1,101 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (5):
+(1) - README 
+(2) - lab2_add
+	A C source module for project 2a. a C program that implements and tests a shared variable add function, 
+	implements several specified command line options; threads, iterations, yield, sync, and produces the 
+	specified output statistics as csv.
+(3) - SortedList.h
+	A header file (supplied by faculty) describing the interfaces for linked list operations.
+(4) - SortedList.c
+	A C source module for project 2a.  implements insert, delete, lookup, and length methods for a 
+	sorted doubly linked list (described in the SortedList.h header file, including correct placement
+	of yield calls).
+(5) - lab2_list.c
+	A C source module for project 2a. a C program that implements and tests a linked list function, 
+	implements several specified command line options; threads, iterations, yield, sync, and produces the 
+	specified output statistics as csv.
+(6) - Makefile
+	A simple makefile that builds, cleans, and tars.
+(7) - lab2_add.csv
+	CSV file containing all of my results for all of the Part-1 tests.
+(8) - lab2_list.csv
+	CSV file containing all of my results for all of the Part-2 tests.
+(9) - graphs 
+	(.png files), created by running gnuplot(1) on the above .csv files with the supplied data reduction scripts.
+NOTES:
+	
+-----------------------------------------------------------------------------------------------------------------
+
+SOUTIONS TO QUESTIONS:
+
+QUESTION 2.1.1 - causing conflicts:
+Why does it take many iterations before errors are seen?
+Why does a significantly smaller number of iterations so seldom fail?
+ANSWER:
+	It take many iterations before errors are seen becasue the operations being preformed are so simple
+	that more often than not the previous thread will finish its work before a new thread can even be created
+	and start executing. Increasing the iterations can make it take much longer and give mroe of a chance for 
+	conflicts. this same reasoning is why smaller numbers of iterations seldom fail, the threads finish
+	before the other threads can even start.
+	
+QUESTION 2.1.2 - cost of yielding:
+Why are the --yield runs so much slower?
+Where is the additional time going?
+Is it possible to get valid per-operation timings if we are using the --yield option?
+If so, explain how. If not, explain why not.
+ANSWER:
+	The --yield runs so much slower becasue the repeated calls to 'sched_yield()' cuase the scheduler
+	to take up a lot of time.
+	The additional time going to the scheduler and other processes that may be ran,
+	system calls, other threads etc.
+	Technically its possible to get valid per-operation timings however it is beyond the scope of our class,
+	so for the purpose fo this class/project, no it is not feasible.
+	
+QUESTION 2.1.3 - measurement errors:
+Why does the average cost per operation drop with increasing iterations?
+If the cost per iteration is a function of the number of iterations, how do we know how many iterations to run
+ (or what the "correct" cost is)?
+ANSWER:
+	The average cost per operation dropswith increasing iterations becasue when there are a loarge amount of iterations
+	the amount of time actually spent doing the math, running the process on the CPU, increases. This causes the amount
+	of time spent creating the threads and such to be a smaller portion of the total time and thus improving the ratio.
+	To know how many iterations to run, or to find the correct cost we can be sure to use locks and then start the 
+	timer after creating the threads. 
+	
+QUESTION 2.1.4 - costs of serialization:
+Why do all of the options perform similarly for low numbers of threads?
+Why do the three protected operations slow down as the number of threads rises?
+ANSWER:
+	All of the options perform similarly for low numbers of threads becasue wheen there are a small amount of threads
+	the lock argments being used do not have to wait very long, the lock contention is pretty low.
+	On the other hand, the three protected operations slow down as the number of threads rises becasue lock contention
+	drastically increases and the threads will spend a good deal of time waiting for the lock.
+	
+QUESTION 2.2.1 - scalability of Mutex
+Compare the variation in time per mutex-protected operation vs the number of threads in Part-1 (adds) and Part-2 (sorted lists).
+Comment on the general shapes of the curves, and explain why they have this shape.
+Comment on the relative rates of increase and differences in the shapes of the curves, and offer an explanation for these differences.
+ANSWER:
+	For add, the genreal shape of the curves is linear, as threads increase the lock contention increases and the amount of time spent
+	waiting also increases. The curves may all be linear-ish however the rates of increase vary per number of threads. around halfway though
+	CAS is the most efficent (4 threads) while near the ending (16 threads) mutex may crape out a win. This is simply due to efficency.
+	Soem lock work better with differnt amounts of threads while some get very hungup. Unsuprisingly, even with a simple add opeartion 
+	the spin lock continues to be the most constly as many of the threads cannot finish. While at the 16 thread mark the other locks do well
+	becasue the earlier threads will finish giving more resources to the remaining threads.
+	This behavior does not change at all for the list operations, linear, increasing, mutex does better at some points, spin lock is bad at 
+	many threads.
+
+QUESTION 2.2.2 - scalability of spin locks
+Compare the variation in time per protected operation vs the number of threads for list operations protected by Mutex vs Spin locks.
+Comment on the general shapes of the curves, and explain why they have this shape.
+Comment on the relative rates of increase and differences in the shapes of the curves, and offer an explanation for these differences.
+ANSWER:
+	The curves are genrally linear and increasing. This is because as the number of threads increases the lock contention also increases,
+	meaning that the amount of time spent waiting during each opeation increases as well.
+	The cureves shaps are not that different and theer geneal rates of increase are the same. I beilive this is beacuse of the same 
+	as the above reasoning.
+	

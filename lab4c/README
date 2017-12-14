@@ -1,0 +1,12 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (4):
+(1) - README 
+(2) - lab4c_tcp.c
+	source file for an embedded application that implements communication with a logging server as described in the project specifications.
+(3) - lab4c_tls.c
+	source file for an embedded application that implements authenticated TLS session encryption as described in the project specifications.
+(4) - Makefile
+	A simple makefile that builds, cleans, and tars.

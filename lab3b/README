@@ -1,0 +1,12 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (13):
+(1) - README 
+(2) - lab3a.c
+	A C source module for project 3b. A program to analyze a file system summary and report on all discovered inconsistencies.
+(3) - Makefile
+	A simple makefile that builds, cleans, and tars.
+NOTES:
+	

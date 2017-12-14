@@ -1,0 +1,28 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (5):
+(1) - README 
+(2) - lab1b-client.c
+	The C source module for prject 1b-client. Itswitches to simple Character-at-a-time termial mode. Then
+	with the nessecary --port=port# command the client will attempt to connect to a server at port$ and pass 
+	commands to it through a socket. Supports a --log=logfile option which will create and store all incoming
+	and putgoing data in the log. Supports a --encrypt=keyfile option which will use use the specified key with 
+	mycrypt twofish to decrypt/encrypt all incoming and outgoing data.
+(3) - lab1b-server.c
+	The C source module for prject lab1b-server.c. Once a client has connected to it the server will execute
+	a bash which it will pass client commands to and then return bash output to client. Supports a 
+	--encrypt=keyfile option which will use the specified key with mycrypt twofish to decrypt/encrypt all 
+	incoming and outgoing data.
+(4) - Makefile
+	A simple makefile that builds, cleans, and tars.
+(5) my.key
+	Keyfile for use with the --encrypt option.
+
+NOTES:
+The code for my Character-at-a-time mode is taken directly from the 
+GNU C Library's "17.7 Noncanonical Mode Example"
+Code for the client/server used http://www.binarytides.com/server-client-example-c-sockets-linux/
+and http://osr507doc.xinuos.com/en/netguide/dusockT.code_samples.html#dusockD.server_code_sample for guidance.
+Code for encryption/decryption used https://www.systutorials.com/docs/linux/man/3-mcrypt/ for guidance.

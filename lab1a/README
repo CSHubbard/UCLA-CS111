@@ -1,0 +1,20 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (4):
+(1) - README 
+(2) - lab1a.c
+	The C source module for prject 1a. It implements a simple Character-at-a-time, full duplex terminal I/O.
+	With the --shell command the program implements passing of input and output between two processes, the shell and the
+	previously described Character-at-a-time, full duplex terminal.	
+(3) - Makefile
+	A simple makefile that builds, cleans, and tars.
+
+NOTES:
+The code for my Character-at-a-time mode is taken directly from the 
+GNU C Library's "17.7 Noncanonical Mode Example"
+	
+Some code in my Project follows almost directly from the examples and explanations
+ provided in my TA section. Wih this in mind my program my be somewhat similar to any others who 
+ relied on the TA's instructions as much as I did.

@@ -1,0 +1,35 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (4):
+(1) - README 
+(2) - lab0.c
+	The C source module for prject 0. It implements a simple input/output redirectuion program.
+	It also contains the functionality to force itself to create a segmentation fault using the
+	--segfault arguement as well as catch this segfault if used alongside the --catch option.
+(3) - Makefile
+	A simple makefile that builds, tars, and smoke-tests the C program
+(4) - backtrace.png
+	An image showing the forced segfault as well as a backtrace to the exact line which causes it.
+(5) - breakpoint.png
+	An image showing breakpoint use as wella s inspection of the nullpointer variable.
+
+	
+PERSONAL SMOKE TEST:
+	The personal smoke test in my Makefile has 4 test cases as follows
+	#test input redirection argument - tests that input redirection works correctly
+	#test output redirection argument - tests that output redirection works correctly
+	#test catch argument - test that the catch argument is workign correctly
+	#test segmentation fault argument - tests that the segmentation fault argument works correctly
+
+NOTES:
+You should know that I have run into difficulty with the segfault and catch smoke tests as they 
+ seem to exit the Makefile as soon as they run lab0 with ther respective arguments.
+	
+All code in my Project follows almost directly from the examples and explanations
+ provided in my TA section. Wih this in mind my program my be somewhat similar to any others who 
+ relied on the Ta's instructions as much as I did.
+ 
+The code for input and output redirection is almost identical to that of the example 
+provided in the project spec.

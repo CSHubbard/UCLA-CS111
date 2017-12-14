@@ -1,0 +1,10 @@
+NAME: Cody Hubbard
+EMAIL: CodySpHubbard@Gmail.com
+ID: 004843389
+
+FILES INCLUDED (5):
+(1) - README 
+(2) - lab4b.c
+	source file for an embedded application that builds and runs (with no errors or warnings) on a Beaglebone.
+(3) - Makefile
+	A simple makefile that builds, cleans, Checks, and tars.
