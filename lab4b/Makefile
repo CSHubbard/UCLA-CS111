@@ -11,4 +11,4 @@ clean:
 	-rm -rf lab4b lab4b-004843389.tar.gz logfile
 dist:
 	@-rm lab4b-004843389.tar.gz
-	tar -cf lab4b-004843389.tar.gz lab4b.c Makefile README
+	tar -czf lab4b-004843389.tar.gz lab4b.c Makefile README
